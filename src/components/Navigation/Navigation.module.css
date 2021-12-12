@@ -1,0 +1,28 @@
+.nav__list {
+  display: inline-flex;
+  list-style: none;
+}
+
+.nav__link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #4863ff;
+  font-size: 18px;
+}
+
+.nav__link:hover {
+  color: #3995ff;
+}
+
+.nav__link_active {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #4863ff;
+  font-size: 18px;
+  color: #3995ff;
+  text-decoration: underline;
+}

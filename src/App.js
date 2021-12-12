@@ -1,5 +1,5 @@
 // import { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Container from './components/Container/Container';
 import AppBar from './components/AppBar/AppBar';
 // import { ToastContainer } from 'react-toastify';
@@ -17,6 +17,7 @@ function App() {
   return (
     <Container>
       <AppBar />
+      <Routes></Routes>
     </Container>
   );
 }
