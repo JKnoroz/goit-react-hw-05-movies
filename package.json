@@ -2,7 +2,7 @@
   "name": "goit-react-hw-02-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JKnoroz.github.io/goit-react-hw-04-hooks-images",
+  "homepage": "https://JKnoroz.github.io/goit-react-hw-05-movies",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
@@ -15,6 +15,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-loader-spinner": "^4.0.0",
+    "react-router-dom": "^6.1.1",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.4",
     "react-toastify": "^8.1.0",
