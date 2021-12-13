@@ -2,6 +2,10 @@
 import { Route, Routes } from 'react-router-dom';
 import Container from './components/Container/Container';
 import AppBar from './components/AppBar/AppBar';
+
+import HomePage from './components/views/HomePage';
+import MoviesPage from './components/views/MoviesPage';
+import MovieDetailsPage from './components/views/MovieDetailsPage';
 // import { ToastContainer } from 'react-toastify';
 // import { toast } from 'react-toastify';
 // import { animateScroll as scroll } from 'react-scroll';
@@ -17,7 +21,11 @@ function App() {
   return (
     <Container>
       <AppBar />
-      <Routes></Routes>
+      <Routes>
+        <Route path="*" element={<HomePage />} />
+        <Route path="movies" element={<MoviesPage />} />
+        <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
+      </Routes>
     </Container>
   );
 }
