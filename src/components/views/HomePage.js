@@ -1,21 +1,20 @@
 import { useState, useEffect } from 'react';
 
-// import { getTrendingMovies } from '../services/api';
+import { getTrendingMovies } from '../services/images-api';
 // import MoviesList from '../components/MoviesList/MoviesList';
 
 export default function HomePage() {
-  //   const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
-  //   useEffect(() => {
-  //     getTrendingMovies(1)
-  //       .then(r => setMovies(r))
-  //       .catch(r => console.log(r));
-  //   }, []);
+  useEffect(() => {
+    getTrendingMovies().then(res => setMovies(res.results));
+  }, []);
 
   //   return <MoviesList movies={movies} />;
   return (
-    <div>
-      <p>It's a home page</p>
-    </div>
+    <>
+      <h1>Trending today</h1>
+      <ul></ul>
+    </>
   );
 }
