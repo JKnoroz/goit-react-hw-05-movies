@@ -8,12 +8,12 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 500;
-  color: #4863ff;
+  color: rgb(146, 165, 165);
   font-size: 18px;
 }
 
 .nav__link:hover {
-  color: #3995ff;
+  color: cadetblue;
 }
 
 .nav__link_active {
@@ -21,8 +21,7 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 500;
-  color: #4863ff;
   font-size: 18px;
-  color: #3995ff;
+  color: cadetblue;
   text-decoration: underline;
 }
