@@ -7,7 +7,6 @@ export default function HomePage() {
 
   useEffect(() => {
     getTrendingMovies().then(res => setMovies(res.results));
-    console.log(movies);
   }, []);
 
   return <MoviesList movies={movies} />;

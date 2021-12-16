@@ -1,12 +1,14 @@
 const API_KEY = 'e2a3eeb34b9aa98d20b3ab8441a3fdd8';
-const BASE_URL = 'https://api.themoviedb.org/3/';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
 export function getTrendingMovies() {
-  return fetch(`${BASE_URL}trending/movie/day?api_key=${API_KEY}`).then(res => {
-    if (res.ok) {
-      return res.json();
-    }
-  });
+  return fetch(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`).then(
+    res => {
+      if (res.ok) {
+        return res.json();
+      }
+    },
+  );
 }
 
 export function getMovieByQuery(query) {
@@ -19,12 +21,13 @@ export function getMovieByQuery(query) {
   });
 }
 
-export function getFilmInfo(movieId) {
+export function getMovieInfo(movieId) {
   return fetch(`
 ${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`).then(res => {
     if (res.ok) {
       return res.json();
     }
+    return Promise.reject(new Error('No such movie'));
   });
 }
 

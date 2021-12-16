@@ -1,0 +1,8 @@
+.MovieInfo {
+  display: flex;
+}
+
+.MovieInfo__img {
+  margin-right: 30px;
+  width: 300px;
+}

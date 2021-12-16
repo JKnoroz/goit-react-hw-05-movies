@@ -10,7 +10,7 @@ import MovieDetailsPage from './components/views/MovieDetailsPage';
 // import { toast } from 'react-toastify';
 // import { animateScroll as scroll } from 'react-scroll';
 
-// import './App.css';
+import './App.css';
 // import 'react-toastify/dist/ReactToastify.css';
 
 // import SearchBar from './components/Searchbar/Searchbar';
