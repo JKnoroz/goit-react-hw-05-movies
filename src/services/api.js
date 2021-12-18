@@ -31,7 +31,7 @@ ${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`).then(res => {
   });
 }
 
-export function getFilmCast(movieId) {
+export function getMovieCredit(movieId) {
   return fetch(`
 ${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`).then(
     res => {
@@ -42,7 +42,7 @@ ${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`).then(
   );
 }
 
-export function getFilmReview(movieId) {
+export function getMovieReview(movieId) {
   return fetch(`
 ${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`).then(
     res => res.json(),

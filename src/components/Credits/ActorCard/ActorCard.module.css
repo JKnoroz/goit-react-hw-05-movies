@@ -1,0 +1,20 @@
+.actorCard {
+  padding: 10px;
+  display: flex;
+  border: 1px solid #000;
+  /* width: 330px; */
+}
+
+.ActorCard__info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.actorCard__name {
+  margin-bottom: 10px;
+}
+
+.actorCard__picture {
+  width: 100px;
+}
