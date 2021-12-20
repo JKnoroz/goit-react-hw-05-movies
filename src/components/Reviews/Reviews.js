@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-
 import { getMovieReviews } from '../../services/api';
 import Review from './Review/Review';
 
@@ -8,11 +7,16 @@ import s from './Reviews.module.css';
 
 export default function Reviews() {
   const [reviews, setReviews] = useState(null);
-  const param = useParams();
+  const { movieId } = useParams();
 
   useEffect(() => {
-    getMovieReviews(param.movieId).then(res => setReviews(res));
-  }, [param.movieId]);
+    getMovieReviews(movieId).then(res => {
+      if (res.results.length === 0) {
+        return;
+      }
+      setReviews(res.results);
+    });
+  }, [movieId]);
 
   return (
     reviews && (

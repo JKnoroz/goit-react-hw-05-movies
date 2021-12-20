@@ -37,12 +37,12 @@ export default function MoviesPage() {
           </button>
           <MovieInfo movie={movie} />
           <SubMenu />
-          {/* <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<p>Loading</p>}>
             <Routes>
               <Route path="credits" element={<Credits />} />
               <Route path="reviews" element={<Reviews />} />
             </Routes>
-          </Suspense> */}
+          </Suspense>
         </>
       )}
     </>
