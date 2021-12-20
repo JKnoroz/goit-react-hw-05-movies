@@ -7,8 +7,8 @@ export default function SubMenu() {
       <h4 className={s.subMenu__title}>Additional information</h4>
       <ul className={s.subMenu__list}>
         <li className={s.subMenu__item}>
-          <NavLink className={s.subMenu__link} to="cast">
-            Cast
+          <NavLink className={s.subMenu__link} to="credits">
+            Credits
           </NavLink>
         </li>
         <li className={s.subMenu__item}>

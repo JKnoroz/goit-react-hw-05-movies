@@ -5,7 +5,7 @@ import ActorCard from './ActorCard/ActorCard';
 
 import s from './Credits.module.css';
 
-export default function Cast() {
+export default function Credits() {
   const [credits, setCredits] = useState(null);
   const param = useParams();
 
