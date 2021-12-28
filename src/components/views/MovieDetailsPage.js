@@ -9,6 +9,7 @@ import { useEffect, useState, lazy, Suspense, useRef } from 'react';
 import MovieInfo from '../MovieInfo/MovieInfo';
 import { getMovieInfo } from '../../services/api';
 import SubMenu from '../SubMenu/SubMenu';
+import LoaderSpinner from '../Loader/Loader';
 
 const Credits = lazy(() =>
   import('../Credits/Credits' /* webpackChunkName: "Credits" */),
@@ -37,7 +38,7 @@ export default function MoviesPage() {
           </button>
           <MovieInfo movie={movie} />
           <SubMenu />
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<LoaderSpinner />}>
             <Routes>
               <Route path="credits" element={<Credits />} />
               <Route path="reviews" element={<Reviews />} />
