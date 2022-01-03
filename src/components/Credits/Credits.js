@@ -7,7 +7,9 @@ import s from './Credits.module.css';
 
 export default function Credits() {
   const [credits, setCredits] = useState(null);
-  const { movieId } = useParams();
+  // const { movieId } = useParams();
+  const { slug } = useParams();
+  const movieId = slug.match(/[a-z0-9]+$/)[0];
 
   useEffect(() => {
     getMovieCredits(movieId).then(res => setCredits(res.cast));

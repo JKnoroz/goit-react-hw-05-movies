@@ -2,7 +2,6 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import s from './Searchform.module.css';
 import { BiSearch } from 'react-icons/bi';
-import { toast } from 'react-toastify';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function SearchForm({ onSubmit }) {

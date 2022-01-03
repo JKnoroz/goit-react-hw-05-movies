@@ -14,10 +14,12 @@ const Reviews = lazy(() =>
 );
 
 export default function MoviesPage() {
-  const { movieId } = useParams();
+  const { slug } = useParams();
+  const movieId = slug.match(/[a-z0-9]+$/)[0];
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
+    console.log(movieId);
     getMovieInfo(movieId).then(res => setMovie(res));
   }, [movieId]);
 
