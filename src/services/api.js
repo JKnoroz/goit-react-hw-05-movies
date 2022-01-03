@@ -12,6 +12,9 @@ export function getTrendingMovies() {
 }
 
 export function getMovieByQuery(query) {
+  // if (!query) {
+  //   return;
+  // }
   return fetch(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`,
   ).then(res => {

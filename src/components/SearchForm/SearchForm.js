@@ -11,28 +11,27 @@ export default function SearchForm({ onSubmit }) {
   let navigate = useNavigate();
   let location = useLocation();
 
-  function handleSearch(e) {
+  const handleSearch = e => {
     setSearchRequest(e.currentTarget.value.toLowerCase());
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = e => {
     e.preventDefault();
-    if (searchRequest.trim() === '') {
-      toast.error('Enter your search request, please', {
-        position: toast.POSITION.TOP_CENTER,
-      });
-      return;
-    }
-    // onSubmit(searchRequest);
+    // if (searchRequest.trim() === '') {
+    //   toast.error('Enter your search request, please', {
+    //     position: toast.POSITION.TOP_CENTER,
+    //   });
+    //   return;
+    // }
     navigate({ ...location, search: `query=${searchRequest}` });
     setSearchRequest('');
-  }
+  };
 
   return (
     <header className={s.Searchbar} onSubmit={handleSubmit}>
       <form className={s.SearchForm}>
         <button type="submit" className={s.SearchFormButton}>
-          <span className={s.SearchFormButtonLabel}>Seach</span>
+          <span className={s.SearchFormButtonLabel}>Search</span>
           <BiSearch className={s.SearchIcon} />
         </button>
 

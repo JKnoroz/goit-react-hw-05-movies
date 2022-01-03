@@ -8,7 +8,7 @@ export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
   let location = useLocation();
 
-  const urlQuery = new URLSearchParams(location.search).get('searchRequest');
+  const urlQuery = new URLSearchParams(location.search).get('query');
 
   useEffect(() => {
     if (!urlQuery) {

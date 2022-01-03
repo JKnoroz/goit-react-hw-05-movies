@@ -1,15 +1,10 @@
-import {
-  useParams,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
-import { useEffect, useState, lazy, Suspense, useRef } from 'react';
+import { useParams, Route, Routes } from 'react-router-dom';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import MovieInfo from '../MovieInfo/MovieInfo';
 import { getMovieInfo } from '../../services/api';
 import SubMenu from '../SubMenu/SubMenu';
 import LoaderSpinner from '../Loader/Loader';
+import GoBack from '../GoBack/GoBack';
 
 const Credits = lazy(() =>
   import('../Credits/Credits' /* webpackChunkName: "Credits" */),
@@ -22,9 +17,6 @@ export default function MoviesPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
-  const location = useRef(useLocation()?.state?.from ?? '/');
-  const navigate = useNavigate();
-
   useEffect(() => {
     getMovieInfo(movieId).then(res => setMovie(res));
   }, [movieId]);
@@ -33,9 +25,7 @@ export default function MoviesPage() {
     <>
       {movie && (
         <>
-          <button className="btn" onClick={() => navigate(location.current)}>
-            Go back
-          </button>
+          <GoBack />
           <MovieInfo movie={movie} />
           <SubMenu />
           <Suspense fallback={<LoaderSpinner />}>
