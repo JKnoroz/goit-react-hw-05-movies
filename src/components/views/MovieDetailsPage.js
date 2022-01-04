@@ -19,7 +19,6 @@ export default function MoviesPage() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    console.log(movieId);
     getMovieInfo(movieId).then(res => setMovie(res));
   }, [movieId]);
 

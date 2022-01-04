@@ -5,6 +5,7 @@ import slugify from 'slugify';
 
 export default function MoviesList({ movies }) {
   let location = useLocation();
+  console.log(location);
   return (
     <ul className={s.movies__list}>
       {movies.map(movie => {
@@ -16,9 +17,10 @@ export default function MoviesList({ movies }) {
                   `${movie.original_title} ${movie.id}`,
                   { lower: true },
                 )}`,
+                state: { from: { location } },
               }}
+
               // {`/movies/${movie.id}`}
-              state={{ from: location }}
             >
               {movie.original_title || movie.original_name}
             </Link>

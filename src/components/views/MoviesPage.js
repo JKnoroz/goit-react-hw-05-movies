@@ -11,7 +11,7 @@ export default function MoviesPage() {
   const urlQuery = new URLSearchParams(location.search).get('query');
 
   useEffect(() => {
-    if (urlQuery.trim() === '') {
+    if (!urlQuery) {
       setMovies(null);
       return;
     }
