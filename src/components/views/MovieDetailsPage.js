@@ -1,4 +1,4 @@
-import { useParams, Route, Routes } from 'react-router-dom';
+import { useParams, Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect, useState, lazy, Suspense } from 'react';
 import MovieInfo from '../MovieInfo/MovieInfo';
 import { getMovieInfo } from '../../services/api';
@@ -14,9 +14,11 @@ const Reviews = lazy(() =>
 );
 
 export default function MoviesPage() {
-  const { slug } = useParams();
-  const movieId = slug.match(/[a-z0-9]+$/)[0];
+  const { movieId } = useParams();
+  // const movieId = slug.match(/[a-z0-9]+$/)[0];
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     getMovieInfo(movieId).then(res => setMovie(res));
@@ -26,6 +28,9 @@ export default function MoviesPage() {
     <>
       {movie && (
         <>
+          {/* <Link to={location?.state?.from?.location ?? '/movies'}>
+            {location?.state?.from?.label ?? 'Назад'}
+          </Link> */}
           <GoBack />
           <MovieInfo movie={movie} />
           <SubMenu />
