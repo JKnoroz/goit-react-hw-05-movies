@@ -8,8 +8,6 @@ import s from './Reviews.module.css';
 export default function Reviews() {
   const [reviews, setReviews] = useState(null);
   const { movieId } = useParams();
-  // const { slug } = useParams();
-  // const movieId = slug.match(/[a-z0-9]+$/)[0];
 
   useEffect(() => {
     getMovieReviews(movieId).then(res => {

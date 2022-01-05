@@ -16,12 +16,6 @@ export default function SearchForm({ onSubmit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // if (searchRequest.trim() === '') {
-    //   toast.error('Enter your search request, please', {
-    //     position: toast.POSITION.TOP_CENTER,
-    //   });
-    //   return;
-    // }
     navigate({ ...location, search: `query=${searchRequest}` });
     setSearchRequest('');
   };

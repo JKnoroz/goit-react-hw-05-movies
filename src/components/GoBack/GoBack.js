@@ -14,8 +14,5 @@ export default function GoBack() {
     >
       Go back
     </button>
-    // <Link to={location?.state?.from?.location ?? '/movies'}>
-    //   {location?.state?.from?.label ?? 'Назад'}
-    // </Link>
   );
 }

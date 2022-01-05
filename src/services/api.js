@@ -12,9 +12,6 @@ export function getTrendingMovies() {
 }
 
 export function getMovieByQuery(query) {
-  // if (!query) {
-  //   return;
-  // }
   return fetch(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`,
   ).then(res => {
@@ -25,8 +22,9 @@ export function getMovieByQuery(query) {
 }
 
 export function getMovieInfo(movieId) {
-  return fetch(`
-${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`).then(res => {
+  return fetch(
+    `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
+  ).then(res => {
     if (res.ok) {
       return res.json();
     }
@@ -35,19 +33,17 @@ ${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`).then(res => {
 }
 
 export function getMovieCredits(movieId) {
-  return fetch(`
-${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`).then(
-    res => {
-      if (res.ok) {
-        return res.json();
-      }
-    },
-  );
+  return fetch(
+    `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
+  ).then(res => {
+    if (res.ok) {
+      return res.json();
+    }
+  });
 }
 
 export function getMovieReviews(movieId) {
-  return fetch(`
-${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`).then(
-    res => res.json(),
-  );
+  return fetch(
+    `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
+  ).then(res => res.json());
 }
